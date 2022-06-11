@@ -16,7 +16,7 @@ const Book = (props) => {
     } else if (!props.year) {
         // если пропс еар пришел пустым, то фон блока красим в серый 
         return (
-            <div style={{ border: "5px solid lightGreen", backgroundColor: "grey"}}>
+            <div style={{ border: "5px solid green", backgroundColor: "lightGreen"}}>
             <h3 style={{ color: props.color}}>{props.name}</h3>
             <p>{props.year}</p>
             <p>{props.autor}</p>
