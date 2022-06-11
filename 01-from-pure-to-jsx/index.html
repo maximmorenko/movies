@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>pure</title>
+</head>
+<body>
+    <!-- что у реакта под капотом? -->
+    <!-- работа реакта без реакта -->
+    <!-- создаем элемент куда будем отрисовывать -->
+    <div id="root"></div> 
+    <!-- на официальном сайте реакта коперуем две ссылки (https://reactjs.org/docs/cdn-links.html) -->
+    <script crossorigin src="https://unpkg.com/react@18/umd/react.development.js"></script>
+    <!-- реакт библиотека -->
+    <!-- у этой библиотеки есть глобальный объект React к тоторому можно обращаться и вызывать разные методы -->
+    <script crossorigin src="https://unpkg.com/react-dom@18/umd/react-dom.development.js"></script>
+    <!-- реакт дом -->
+    <!-- дом тоже имеет глобальный объект ReactDom и к нему тоже можно обращаться, для рендера-->
+    <!-- откроем этот штмл в браузере из папки, не Go Live, посмотрим в консоле -->
+    <!-- создаем проложение -->
+    <script>
+        // 1. создадим функцию компонент, которая будет возвращать созданый элемент
+        const App = ()=>{
+            return (React.createElement("h1", {className: "class", id: "id"}, ["Привет из под капота"]))
+            // у метода криэйтэлемент три параметра: 1-имя (тег), 2-атрибуты в виде обьекта, 3-дочерние элемент или массив элементов.
+        }
+        // теперь отрисуем наше приложение в диве с помощью библиотеки РеактДОМ
+        ReactDOM.render(React.createElement(App), document.getElementById('root'));
+        // у рендера два параметра, 1-что отрисовать, 2- куда отрисовать
+    </script>
+</body>
+</html>
