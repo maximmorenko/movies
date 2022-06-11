@@ -22,9 +22,25 @@
     <!-- создаем проложение -->
     <script>
         // 1. создадим функцию компонент, которая будет возвращать созданый элемент
-        const App = ()=>{
-            return (React.createElement("h1", {className: "class", id: "id"}, ["Привет из под капота"]))
+        const App = () => {
+            return (React.createElement("h1", {className: "class"}, ["Привет из под капота",
+            React.createElement("h2", {}, "BOOKS"),
+            React.createElement(Book, {name: "про Js", year: "2022", autor: "by Maccensi", color: "red"}),
+            React.createElement(Book, {name: "про React", year: "1966", autor: "by trotro", color: "green"}),
+            React.createElement(Book, {name: "про HTML", year: "2002", autor: "by kloo", color: "yellow"}),
+            React.createElement(Book, {name: "про CSS", year: "2017", autor: "by qwerty", color: "blue"})
+        ]))
             // у метода криэйтэлемент три параметра: 1-имя (тег), 2-атрибуты в виде обьекта, 3-дочерние элемент или массив элементов.
+        }
+        const Book = (props) => {
+            console.log(props);
+        return (
+                    React.createElement("div",{style: {border: "1px solid black", margin: "20px"}}, [
+                        React.createElement("h3", {style: {color: props.color}}, props.name),
+                        React.createElement("p", {}, props.year),
+                        React.createElement("p", {}, props.autor)
+                ])
+            )
         }
         // теперь отрисуем наше приложение в диве с помощью библиотеки РеактДОМ
         ReactDOM.render(React.createElement(App), document.getElementById('root'));
