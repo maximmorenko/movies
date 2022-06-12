@@ -7,7 +7,7 @@ const Book = (props) => {
         // return null
         // если пропс нэим пришел пустым, то фон блока красим в розовый
         return (
-            <div style={{ border: "5px solid red", backgroundColor: "pink"}}>
+            <div style={{ border: "5px solid red", backgroundColor: "pink", margin: "10px"}}>
             <h3 style={{ color: props.color}}>{props.name}</h3>
             <p>{props.year}</p>
             <p>{props.autor}</p>
@@ -16,7 +16,7 @@ const Book = (props) => {
     } else if (!props.year) {
         // если пропс еар пришел пустым, то фон блока красим в серый 
         return (
-            <div style={{ border: "5px solid green", backgroundColor: "lightGreen"}}>
+            <div style={{ border: "5px solid green", backgroundColor: "lightGreen", margin: "10px"}}>
             <h3 style={{ color: props.color}}>{props.name}</h3>
             <p>{props.year}</p>
             <p>{props.autor}</p>
@@ -24,7 +24,7 @@ const Book = (props) => {
         )
     }
     return (
-        <div style={{ border: "2px solid grey"}}>
+        <div style={{ border: "2px solid grey", margin: "10px"}}>
             <h3 style={{ color: props.color}}>{props.name}</h3>
             <p>{props.year}</p>
             <p>{props.autor}</p>
