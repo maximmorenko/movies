@@ -4,13 +4,14 @@ import './App.css';
 // import Preloader from './components/Preloader';
 // import Counter from './components/Counter';
 // import LifeCycle from './components/LifeCycle';
-import Timer from './components/Timer';
+// import Timer from './components/Timer';
+import WorkingWithArray from './components/WorkingWithArray';
 
 const App = () => {
   
   return (
   <div>
-    <Timer/>
+    <WorkingWithArray/>
   </div>
   );
 }
