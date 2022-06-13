@@ -16,11 +16,14 @@ class App extends Component {
         {id: 'qwert', name: 'Mora'}
     ]
   };
-  // создадим функциию не верхнем уровне, и передадим ее на нижний к постам и там вызовем при нажатии на пост. передавать ее будем по лесенке, сразу в список постов, а потом в посты.
-  hendleSomething = () => {
-    console.log('клик на пост')
+  // создадим функциию (метод класса) не верхнем уровне, и передадим ее на нижний к постам и там вызовем при нажатии на пост. передавать ее будем по лесенке, сразу в список постов, а потом в посты.
+  // hendleSomething = () => {
+  //   console.log('клик на пост')
+  // }
+  removePost = (id) => {
+    this.setState(
+      {posts: this.state.posts.filter(item => item.id !== id)})
   }
-
 
   render() {
     // также мы можем делать деструктуризацию, например state.posts можно записать как:
@@ -30,7 +33,7 @@ class App extends Component {
        {/* передаем массив постов */}
         {/* теперь имеем базовый компонент арр, у него дочерний posts, а у posts дочерние post */}
         {/* передаем наш колбек на нижний уровень cb - callback */}
-        <Posts posts={this.state.posts} cb={this.hendleSomething}/>
+        <Posts posts={this.state.posts} cb={this.removePost}/>
       </div>
     );
   }

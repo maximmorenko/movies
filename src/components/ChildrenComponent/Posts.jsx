@@ -7,7 +7,7 @@ export default function Posts(props) {
             {
                 // спускаем полученый колбек из пропса еще ниже
                 props.posts.map(item=>(
-                    <Post key={item.id} name={item.name} cb={props.cb}/>
+                    <Post id={item.id} key={item.id} name={item.name} cb={props.cb}/>
                     ))
             }
         </div>
