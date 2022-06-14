@@ -7,7 +7,8 @@ class Form extends Component {
     // создадим стейт и в нем будем хранить поля формы
     state = {
         firstName: '',
-        email: ''
+        email: '',
+        textarea: ''
     }
     // чтобы связать инпут со стейтом нужен какой-то обработчик onChange который каждый раз будет обновлять
     // перезаписывать стейт
@@ -41,7 +42,7 @@ class Form extends Component {
 
     render() {
         //сделаем деструктуризацию стейта чтобы им удобнее было полльзоваться
-        const {firstName, email} = this.state;
+        const {firstName, email, textarea} = this.state;
         return (
             <div>
                 <input 
@@ -53,6 +54,7 @@ class Form extends Component {
                     onChange={this.handleChange}
                     onBlur={this.validateName}
                 />
+                <br/>
                 {/* теперь инпут контролируемый и мы можем взять данные из стейта и прверить их (валидация) */}
                 <input 
                     type='email'
@@ -63,6 +65,15 @@ class Form extends Component {
                     onChange={this.handleChange}
                     onBlur={this.validateEmail}
                 />
+                <br/>
+                <textarea 
+                    name='textarea'
+                    placeholder='введите text...'
+                    value={textarea}
+                    // value будет брать значение из нашего стейта
+                    onChange={this.handleChange}
+                >{textarea}</textarea>
+                <br/>
             </div>
         );
     }
