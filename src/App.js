@@ -9,7 +9,8 @@ import './App.css';
 // import Posts from './components/ChildrenComponent/Posts';
 // import Form from './components/Form/Form';
 // import Form2 from './components/Form2';
-import FromWithRef from './components/FromWithRef';
+// import FromWithRef from './components/FromWithRef';
+import Ref from './components/Ref';
 
 class App extends Component {
   render() {
@@ -17,7 +18,7 @@ class App extends Component {
     // const {posts} = this.state // и дальше использовать переменную posts вместо this.state.posts
     return (
       <div>
-        <FromWithRef />
+        <Ref />
       </div>
     );
   }
