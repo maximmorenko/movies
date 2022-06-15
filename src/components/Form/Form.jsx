@@ -8,7 +8,12 @@ class Form extends Component {
     state = {
         firstName: '',
         email: '',
-        textarea: ''
+        textarea: '',
+        select: '',
+        subscription: false,
+        sub: false,
+        gander: '',
+        range: 50
     }
     // чтобы связать инпут со стейтом нужен какой-то обработчик onChange который каждый раз будет обновлять
     // перезаписывать стейт
@@ -38,11 +43,15 @@ class Form extends Component {
             alert('Email is not valid')
         }
     }
+    handleCheckBoxOnChange = (event) => {
+        // имя также приходит динамически, а значение будет чекед
+        this.setState({[event.target.name]: event.target.checked})
+    }
 
 
     render() {
         //сделаем деструктуризацию стейта чтобы им удобнее было полльзоваться
-        const {firstName, email, textarea} = this.state;
+        const {firstName, email, textarea, select, subscription, sub, gander, range} = this.state;
         return (
             <div>
                 <input 
@@ -67,6 +76,7 @@ class Form extends Component {
                 />
                 <br/>
                 <textarea 
+                // имя атрибут также будет прилетать динамически из ф-ции handleChange
                     name='textarea'
                     placeholder='введите text...'
                     value={textarea}
@@ -74,6 +84,56 @@ class Form extends Component {
                     onChange={this.handleChange}
                 >{textarea}</textarea>
                 <br/>
+                <select name='select' value={select} onChange={this.handleChange}>
+                {/* имя атрибут также будет прилетать динамически из ф-ции handleChange */}
+                    <option disabled value=""></option>
+                    <option value="1">1</option>
+                    <option value="2">2</option>
+                    <option value="3">3</option>
+                </select>
+                <br/>
+                {/* у чекбокса состояние будет определять чекед, в который будет прилетать фолс или тру из нашего стейта subscription (согласие на подписку)*/}
+                <label>
+                <input 
+                type="checkbox" 
+                name="subscription" 
+                checked={subscription} 
+                // для выбора нужна функция onChange, создадим ее и передадим сюда
+                onChange={this.handleCheckBoxOnChange}
+                />
+                subscription
+                </label>
+                <br/>
+                <label>
+                <input 
+                type="checkbox" 
+                name="sub" 
+                checked={sub} 
+                // для выбора нужна функция onChange, создадим ее и передадим сюда
+                onChange={this.handleCheckBoxOnChange}
+                />
+                sub
+                </label>
+                <br/>
+                <input 
+                type="radio"
+                name="gander"
+                value="male"
+                checked={gander === "male"}
+                onChange={this.handleChange}
+                />Male
+                <input 
+                type="radio"
+                name="gander"
+                value="female"
+                checked={gander === "female"}
+                onChange={this.handleChange}
+                />Female
+                <br/>
+                <input type="range" name="range" min="0" max="100" step="1"
+                onChange={this.handleChange}
+                value={range}
+                />{range}
             </div>
         );
     }
