@@ -8,7 +8,8 @@ import './App.css';
 // import WorkingWithArray from './components/WorkingWithArray';
 // import Posts from './components/ChildrenComponent/Posts';
 // import Form from './components/Form/Form';
-import Form2 from './components/Form2';
+// import Form2 from './components/Form2';
+import FromWithRef from './components/FromWithRef';
 
 class App extends Component {
   render() {
@@ -16,7 +17,7 @@ class App extends Component {
     // const {posts} = this.state // и дальше использовать переменную posts вместо this.state.posts
     return (
       <div>
-       <Form2 />
+        <FromWithRef />
       </div>
     );
   }
