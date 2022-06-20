@@ -1,11 +1,19 @@
-import React from 'react';
+import React, {useState} from 'react';
 import Clicker from './functionComponent/Clicker';
 
+
+
 function App() {
+// сделаем кнопку, которая будет показывать и прятать кликер
+// создадим состояние, по умолчанию кликер выкл.
+  const [isClicker, setClicker] = useState(false)
 
   return (
     <div>
-     <Clicker/>
+      {/* в обработчике поменяем состояние isClicker на true*/}
+      <button onClick={()=>setClicker(!isClicker)}>switchClicker</button>
+      {/* true && выражение всегда возвращает выражение, а false && выражение всегда возвращает false */}
+      {isClicker && <Clicker/>}
     </div>
   );
 }
