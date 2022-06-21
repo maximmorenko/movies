@@ -1,6 +1,7 @@
 import React, {useState} from 'react';
 //import Clicker from './functionComponent/Clicker';
-import WithRef from './functionComponent/WithRef';
+// import WithRef from './functionComponent/WithRef';
+import TimerHooks from './functionComponent/TimerHooks';
 
 
 
@@ -15,7 +16,8 @@ function App() {
       {/* <button onClick={()=>setClicker(!isClicker)}>switchClicker</button> */}
       {/* true && выражение всегда возвращает выражение, а false && выражение всегда возвращает false */}
       {/* {isClicker && <Clicker/>} */}
-      <WithRef/>
+      {/* <WithRef/> */}
+      <TimerHooks />
     </div>
   );
 }
