@@ -2,7 +2,8 @@ import React, {useState} from 'react';
 //import Clicker from './functionComponent/Clicker';
 // import WithRef from './functionComponent/WithRef';
 // import TimerHooks from './functionComponent/TimerHooks';
-import UseState from './HOOKS/UseState';
+// import UseState from './HOOKS/UseState';
+import UseEffect from './HOOKS/UseEffect';
 
 
 
@@ -19,7 +20,7 @@ function App() {
       {/* {isClicker && <Clicker/>} */}
       {/* <WithRef/> */}
       {/* <TimerHooks /> */}
-      <UseState/>
+      <UseEffect/>
     </div>
   );
 }
