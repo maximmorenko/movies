@@ -1,4 +1,4 @@
-import React, {useState} from 'react';
+import React from 'react';
 //import Clicker from './functionComponent/Clicker';
 // import WithRef from './functionComponent/WithRef';
 // import TimerHooks from './functionComponent/TimerHooks';
@@ -6,7 +6,8 @@ import React, {useState} from 'react';
 // import UseEffect from './HOOKS/UseEffect';
 // import { UseContext } from './HOOKS/UseContext';
 // import Books from './functionComponent/Books';
-import UseReducer from './HOOKS/UseReducer';
+// import UseReducer from './HOOKS/UseReducer';
+import TimerReduser from './functionComponent/TimerReduser';
 
 
 function App() {
@@ -16,7 +17,8 @@ function App() {
     // <UseContext>
     //   <Books />
     // </UseContext>
-    <UseReducer />
+    // <UseReducer />
+    <TimerReduser />
 
   );
 }
